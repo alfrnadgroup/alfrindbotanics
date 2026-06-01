@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALFRIND Wallet of Brands</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    #imgModal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+
+    #imgModal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 1rem;
+    }
+
+    #imgModal .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body class="font-sans bg-white text-gray-900 transition-all duration-300 text-right">
+
+  <!-- Image Modal -->
+  <div id="imgModal" class="flex">
+    <span class="close">&times;</span>
+    <img src="" alt="Expanded Image">
+  </div>
+
+  <!-- HEADER -->
+  <header class="bg-gray-900 text-white shadow-lg sticky top-0 z-40">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+
+      <div class="flex items-center space-x-4 rtl:space-x-reverse">
+        <img src="alfrind-logo.png"
+             alt="ALFRIND Logo"
+             class="max-h-24 w-auto cursor-pointer modal-trigger">
+
+        <div>
+          <h1 class="text-2xl font-bold"
+              data-en="ALFRIND"
+              data-ar="الفريد">
+              الفريد
+          </h1>
+
+          <button id="lang-toggle"
+            class="mt-2 bg-white text-gray-900 px-4 py-1 rounded-lg text-sm font-semibold shadow">
+            <span class="lang-en text-gray-500">EN</span>
+            /
+            <span class="lang-ar font-bold">عربي</span>
+          </button>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex space-x-6 rtl:space-x-reverse text-lg">
+        <a href="#home"
+           class="hover:text-yellow-400 transition"
+           data-en="Home"
+           data-ar="الرئيسية">
+           الرئيسية
+        </a>
+
+        <a href="#about"
+           class="hover:text-yellow-400 transition"
+           data-en="About"
+           data-ar="من نحن">
+           من نحن
+        </a>
+
+        <a href="#ads-strip"
+           class="hover:text-yellow-400 transition"
+           data-en="Ads"
+           data-ar="الإعلانات">
+           الإعلانات
+        </a>
+
+        <a href="#products"
+           class="hover:text-yellow-400 transition"
+           data-en="Wallet"
+           data-ar="المحفظة">
+           المحفظة
+        </a>
+
+        <a href="#partners"
+           class="hover:text-yellow-400 transition"
+           data-en="Brands"
+           data-ar="العلامات">
+           العلامات
+        </a>
+
+        <a href="#contact"
+           class="hover:text-yellow-400 transition"
+           data-en="Contact"
+           data-ar="تواصل معنا">
+           تواصل معنا
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home"
+           class="relative h-[90vh] flex items-center justify-center text-center overflow-hidden">
+
+    <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900"></div>
+
+    <div class="relative z-10 px-6 text-white">
+
+      <h2 class="text-5xl md:text-6xl font-extrabold mb-6"
+          data-en="A Wallet of Brands"
+          data-ar="محفظة من العلامات">
+          محفظة من العلامات
+      </h2>
+
+      <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8"
+         data-en="ALFRIND unites unique brands in one stylish identity."
+         data-ar="الفريد تجمع علامات فريدة في هوية أنيقة واحدة.">
+         الفريد تجمع علامات فريدة في هوية أنيقة واحدة.
+      </p>
+
+      <a href="#products"
+         class="bg-white text-gray-900 px-8 py-4 rounded-xl font-bold hover:bg-yellow-300 transition shadow-xl"
+         data-en="Explore the Wallet"
+         data-ar="استكشف المحفظة">
+         استكشف المحفظة
+      </a>
+
+      <div class="mt-12">
+        <img src="ads-slot.png"
+             alt="Ad Slot"
+             class="mx-auto max-w-sm rounded-2xl shadow-2xl cursor-pointer modal-trigger">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-6 text-center">
+
+      <h3 class="text-4xl font-bold mb-6"
+          data-en="About ALFRIND"
+          data-ar="عن الفريد">
+          عن الفريد
+      </h3>
+
+      <p class="max-w-4xl mx-auto text-xl text-gray-700 leading-loose"
+         data-en="ALFRIND is a curated wallet of brands, offering a unique mix of luxury, nature, and innovation."
+         data-ar="الفريد هي محفظة من العلامات التجارية المختارة، تمزج بين الفخامة والطبيعة والابتكار.">
+         الفريد هي محفظة من العلامات التجارية المختارة، تمزج بين الفخامة والطبيعة والابتكار.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ADVERTISING STRIP -->
+  <section id="ads-strip" class="py-20 bg-black">
+    <div class="container mx-auto px-6 text-center">
+
+      <h3 class="text-4xl font-bold text-white mb-12"
+          data-en="Advertising Partners"
+          data-ar="الشركاء الإعلانيون">
+          الشركاء الإعلانيون
+      </h3>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+
+        <div class="bg-white rounded-2xl p-3 shadow-xl">
+          <img src="add1.jpg" class="w-full h-44 object-cover rounded-xl cursor-pointer modal-trigger">
+        </div>
+
+        <div class="bg-white rounded-2xl p-3 shadow-xl">
+          <img src="add2.jpg" class="w-full h-44 object-cover rounded-xl cursor-pointer modal-trigger">
+        </div>
+
+        <div class="bg-white rounded-2xl p-3 shadow-xl">
+          <img src="add3.jpg" class="w-full h-44 object-cover rounded-xl cursor-pointer modal-trigger">
+        </div>
+
+        <div class="bg-white rounded-2xl p-3 shadow-xl">
+          <img src="add4.jpg" class="w-full h-44 object-cover rounded-xl cursor-pointer modal-trigger">
+        </div>
+
+        <div class="bg-white rounded-2xl p-3 shadow-xl">
+          <img src="add5.jpg" class="w-full h-44 object-cover rounded-xl cursor-pointer modal-trigger">
+        </div>
+
+        <div class="bg-white rounded-2xl p-3 shadow-xl">
+          <img src="add6.jpg" class="w-full h-44 object-cover rounded-xl cursor-pointer modal-trigger">
+        </div>
+
+        <div class="bg-white rounded-2xl p-3 shadow-xl">
+          <img src="add7.jpg" class="w-full h-44 object-cover rounded-xl cursor-pointer modal-trigger">
+        </div>
+
+        <div class="bg-white rounded-2xl p-3 shadow-xl">
+          <img src="add8.jpg" class="w-full h-44 object-cover rounded-xl cursor-pointer modal-trigger">
+        </div>
+
+        <div class="bg-white rounded-2xl p-3 shadow-xl">
+          <img src="add9.jpg" class="w-full h-44 object-cover rounded-xl cursor-pointer modal-trigger">
+        </div>
+
+        <div class="bg-white rounded-2xl p-3 shadow-xl">
+          <img src="add10.jpg" class="w-full h-44 object-cover rounded-xl cursor-pointer modal-trigger">
+        </div>
+
+        <div class="bg-white rounded-2xl p-3 shadow-xl">
+          <img src="add11.jpg" class="w-full h-44 object-cover rounded-xl cursor-pointer modal-trigger">
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WALLET -->
+  <section id="products" class="py-20 bg-white">
+    <div class="container mx-auto px-6 text-center">
+
+      <h3 class="text-4xl font-bold mb-6"
+          data-en="The Wallet"
+          data-ar="المحفظة">
+          المحفظة
+      </h3>
+
+      <p class="max-w-3xl mx-auto text-xl text-gray-700 mb-12"
+         data-en="Each brand inside ALFRIND reflects a story of style and purpose."
+         data-ar="كل علامة داخل الفريد تروي قصة من الأناقة والغرض.">
+         كل علامة داخل الفريد تروي قصة من الأناقة والغرض.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- BRANDS -->
+  <section id="partners"
+           class="py-20 bg-gradient-to-r from-green-100 via-white to-green-50">
+
+    <div class="container mx-auto px-6 text-center">
+
+      <h3 class="text-4xl font-bold mb-12"
+          data-en="Our Brands"
+          data-ar="علاماتنا">
+          علاماتنا
+      </h3>
+
+      <div class="grid md:grid-cols-4 gap-8">
+
+        <div class="bg-white p-6 rounded-2xl shadow-lg hover:scale-105 transition">
+          <img src="alfulka-logo.png"
+               class="h-20 mx-auto mb-4 cursor-pointer modal-trigger">
+          <p class="font-bold text-lg">ALFULKA</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-lg hover:scale-105 transition">
+          <img src="breadpacket-logo.png"
+               class="h-20 mx-auto mb-4 cursor-pointer modal-trigger">
+          <p class="font-bold text-lg">BreadPacket</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-lg hover:scale-105 transition">
+          <img src="alfrnad-logo.png"
+               class="h-20 mx-auto mb-4 cursor-pointer modal-trigger">
+          <p class="font-bold text-lg">ALFRNAD</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-lg hover:scale-105 transition">
+          <img src="perfume-logo.png"
+               class="h-20 mx-auto mb-4 cursor-pointer modal-trigger">
+          <p class="font-bold text-lg">ALFRIND Perfume</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-6 text-center">
+
+      <h3 class="text-4xl font-bold mb-6"
+          data-en="Contact Us"
+          data-ar="تواصل معنا">
+          تواصل معنا
+      </h3>
+
+      <p class="text-xl text-gray-700 mb-8"
+         data-en="Send us your thoughts or inquiries."
+         data-ar="أرسل لنا أفكارك أو استفساراتك.">
+         أرسل لنا أفكارك أو استفساراتك.
+      </p>
+
+      <a href="mailto:alfrnadgroup@gmail.com"
+         class="inline-block bg-gray-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-purple-800 transition shadow-xl"
+         data-en="Send Email"
+         data-ar="أرسل بريدًا">
+         أرسل بريدًا
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-white py-8 text-center">
+    <p class="text-lg font-semibold">
+      © 2025 ALFRIND — All Rights Reserved
+    </p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    // LANGUAGE TOGGLE
+
+    const toggleBtn = document.getElementById('lang-toggle');
+    let currentLang = 'ar';
+
+    function updateLanguage(lang) {
+
+      currentLang = lang;
+
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+      document.body.classList.toggle('text-right', lang === 'ar');
+      document.body.classList.toggle('text-left', lang === 'en');
+
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+      });
+
+      document.querySelector('.lang-en').classList.toggle('text-gray-500', lang !== 'en');
+      document.querySelector('.lang-en').classList.toggle('font-bold', lang === 'en');
+
+      document.querySelector('.lang-ar').classList.toggle('text-gray-500', lang !== 'ar');
+      document.querySelector('.lang-ar').classList.toggle('font-bold', lang === 'ar');
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      updateLanguage(currentLang === 'ar' ? 'en' : 'ar');
+    });
+
+    updateLanguage('ar');
+
+    // IMAGE MODAL
+
+    const modal = document.getElementById('imgModal');
+    const modalImg = modal.querySelector('img');
+    const closeBtn = modal.querySelector('.close');
+
+    document.querySelectorAll('.modal-trigger').forEach(img => {
+
+      img.addEventListener('click', () => {
+
+        modalImg.src = img.src;
+        modal.style.display = 'flex';
+
+      });
+
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    modal.addEventListener('click', e => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+
+  </script>
+
+</body>
+</html>

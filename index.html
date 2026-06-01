@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>الفرند بوتانيك</title>
+
+<script src="https://www.paypal.com/sdk/js?client-id=AdAZZJ6hx9Dp_cz_e506XL770LMrBhzaepLYQhloCBMxn8JAN85AYlpBVLS-PwLnMcG5sFm2uCRgZrYH&currency=USD&intent=capture&components=buttons"></script>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Tajawal',sans-serif;
+}
+
+body{
+background:#f4f1eb;
+color:#2d2418;
+}
+
+.hero{
+height:300px;
+background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
+url('https://images.unsplash.com/photo-1515377905703-c4788e51af15');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.hero h1{
+font-size:48px;
+}
+
+.hero p{
+font-size:20px;
+margin-top:10px;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+margin-top:20px;
+}
+
+.card{
+background:white;
+border-radius:20px;
+padding:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+text-align:center;
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+.price{
+font-size:24px;
+font-weight:bold;
+color:#486a3c;
+margin:10px 0;
+}
+
+button{
+background:#486a3c;
+color:white;
+border:none;
+padding:12px 18px;
+border-radius:10px;
+cursor:pointer;
+}
+
+.cart{
+background:white;
+padding:20px;
+border-radius:20px;
+margin-top:40px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.cart-item{
+display:flex;
+justify-content:space-between;
+margin:10px 0;
+}
+
+.total{
+font-size:28px;
+font-weight:bold;
+margin-top:20px;
+color:#486a3c;
+}
+
+.customer{
+margin-top:20px;
+}
+
+.customer input{
+width:100%;
+padding:12px;
+margin-bottom:10px;
+border-radius:10px;
+border:1px solid #ccc;
+}
+
+#paypal-button-container{
+margin-top:20px;
+}
+
+footer{
+margin-top:50px;
+padding:30px;
+text-align:center;
+background:#2d2418;
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+<div>
+<h1>الفرند بوتانيك</h1>
+<p>منتجات طبيعية للعناية بالشعر والبشرة</p>
+</div>
+</section>
+
+<div class="container">
+
+<h2>المنتجات المميزة</h2>
+
+<div class="products">
+
+<div class="card">
+<h3>صابون إكليل الجبل</h3>
+<div class="price">0.600 ر.ع</div>
+<button onclick="addToCart('صابون إكليل الجبل',0.600)">أضف للسلة</button>
+</div>
+
+<div class="card">
+<h3>صابون اللافندر</h3>
+<div class="price">0.600 ر.ع</div>
+<button onclick="addToCart('صابون اللافندر',0.600)">أضف للسلة</button>
+</div>
+
+<div class="card">
+<h3>شامبو إكليل الجبل</h3>
+<div class="price">1.000 ر.ع</div>
+<button onclick="addToCart('شامبو إكليل الجبل',1.000)">أضف للسلة</button>
+</div>
+
+<div class="card">
+<h3>شامبو اللافندر</h3>
+<div class="price">1.000 ر.ع</div>
+<button onclick="addToCart('شامبو اللافندر',1.000)">أضف للسلة</button>
+</div>
+
+<div class="card">
+<h3>مرطب جسم ورد الجبل</h3>
+<div class="price">3.000 ر.ع</div>
+<button onclick="addToCart('مرطب جسم ورد الجبل',3.000)">أضف للسلة</button>
+</div>
+
+<div class="card">
+<h3>سيريوم اللبان الطبيعي</h3>
+<div class="price">3.000 ر.ع</div>
+<button onclick="addToCart('سيريوم اللبان الطبيعي',3.000)">أضف للسلة</button>
+</div>
+
+<div class="card">
+<h3>سيريوم ورد الجبل</h3>
+<div class="price">3.000 ر.ع</div>
+<button onclick="addToCart('سيريوم ورد الجبل',3.000)">أضف للسلة</button>
+</div>
+
+</div>
+
+<div class="cart">
+
+<h2>سلة المشتريات</h2>
+
+<div id="cartItems"></div>
+
+<div class="total">
+الإجمالي: <span id="total">0.000</span> ر.ع
+</div>
+
+<div class="customer">
+
+<input type="text" id="customerName" placeholder="الاسم الكامل">
+
+<input type="text" id="phone" placeholder="رقم الهاتف">
+
+<input type="text" id="address" placeholder="العنوان">
+
+</div>
+
+<div id="paypal-button-container"></div>
+<div style="margin-top:25px">
+
+<label style="font-size:18px">
+
+<input type="checkbox" id="phonePayment">
+
+الدفع بواسطة الهاتف
+
+</label>
+
+<p style="margin-top:10px;color:#b22222">
+
+ملاحظة: لا يتضمن السعر رسوم الشحن
+
+</p>
+
+<button
+id="sendOrderBtn"
+onclick="sendPhoneOrder()"
+style="
+width:100%;
+margin-top:15px;
+padding:15px;
+font-size:18px;
+">
+إرسال الطلب
+</button>
+
+</div>
+</div>
+
+</div>
+
+<footer>
+
+<h3>Botanic Oman</h3>
+
+<p>Natural • Organic • Botanical Products</p>
+
+</footer>
+
+<script>
+function sendPhoneOrder(){
+
+if(cart.length===0){
+
+alert("السلة فارغة");
+
+return;
+
+}
+
+if(!document.getElementById("phonePayment").checked){
+
+alert("اختر الدفع بواسطة الهاتف");
+
+return;
+
+}
+
+let orderData={
+
+name:document.getElementById("customerName").value,
+
+phone:document.getElementById("phone").value,
+
+address:document.getElementById("address").value,
+
+items:cart.map(item =>
+`${item.name} x ${item.qty}`
+).join(", "),
+
+total:document.getElementById("total").innerText,
+
+status:"Phone Payment"
+
+};
+
+fetch("/save-order",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify(orderData)
+
+})
+.then(response=>response.json())
+.then(data=>{
+
+alert("تم إرسال الطلب بنجاح");
+
+cart=[];
+
+renderCart();
+
+document.getElementById("customerName").value="";
+document.getElementById("phone").value="";
+document.getElementById("address").value="";
+document.getElementById("phonePayment").checked=false;
+
+})
+.catch(error=>{
+
+console.error(error);
+
+alert("فشل إرسال الطلب");
+
+});
+
+}
+let cart=[];
+
+function addToCart(name,price){
+
+let item=cart.find(x=>x.name===name);
+
+if(item){
+item.qty++;
+}else{
+cart.push({
+name:name,
+price:price,
+qty:1
+});
+}
+
+renderCart();
+
+}
+
+function renderCart(){
+
+let html="";
+let total=0;
+
+cart.forEach(item=>{
+
+let line=item.price*item.qty;
+
+total+=line;
+
+html+=`
+<div class="cart-item">
+<span>${item.name} × ${item.qty}</span>
+<span>${line.toFixed(3)} ر.ع</span>
+</div>
+`;
+
+});
+
+document.getElementById("cartItems").innerHTML=html;
+document.getElementById("total").innerHTML=total.toFixed(3);
+
+}
+
+
+paypal.Buttons({
+
+createOrder:function(){
+
+let total=document.getElementById("total").innerText;
+
+if(parseFloat(total)<=0){
+alert("السلة فارغة");
+return;
+}
+
+let orderData={
+name:document.getElementById("customerName").value,
+phone:document.getElementById("phone").value,
+address:document.getElementById("address").value,
+items:cart.map(item =>
+`${item.name} x ${item.qty}`
+).join(", "),
+total:total
+};
+
+return fetch("/create-payment",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify(orderData)
+})
+.then(res=>res.json())
+.then(data=>data.id);
+
+},
+
+onApprove:function(data){
+
+return fetch("/capture-payment",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+orderID:data.orderID
+})
+})
+.then(res=>res.json())
+.then(result=>{
+
+if(result.paid){
+
+alert("تم الدفع بنجاح");
+
+cart=[];
+renderCart();
+
+document.getElementById("customerName").value="";
+document.getElementById("phone").value="";
+document.getElementById("address").value="";
+
+}else{
+
+alert("فشل التحقق من الدفع");
+
+}
+
+});
+
+},
+
+
+onError:function(err){
+
+console.error(err);
+
+alert("حدث خطأ أثناء الدفع");
+
+}
+
+}).render('#paypal-button-container');
+
+</script>
+
+
+</body>
+</html>
